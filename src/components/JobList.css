@@ -1,0 +1,26 @@
+.container-title {
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.JobList {
+  list-style: none;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+.job {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  max-width: 35rem;
+  
+}
+
+.job-description {
+  display: block;
+}
