@@ -17,7 +17,7 @@ const JobList = () => {
       }
 
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       setJobs(data);
       setLoading(false);
     };
@@ -32,45 +32,55 @@ const JobList = () => {
     setIsNotFound(true);
   }
 
+  console.log(jobs);
   if (isNotFound) {
     return <div>Not found</div>;
   }
 
   return (
     <>
-    <div>
-      <h1 className="container-title">Job List</h1>
-      <ul className="JobList">
-        {jobs.map((job) => {
-          return (
-            <div key={job.id} className="job">
-            <li>
-              <h2>{job.title}</h2>
-              <p>Customer Name: <span>{job.clientName}</span></p>
-              <p>Site Address: <span>{job.location}</span></p>
-              <div className="job-description">
-                <p>Job Description:</p>
-              <p>{job.description}</p>
-              </div>
-              <div>
-                <p>Client Phone Number:</p>
-              <p>{job.clientPhoneNumber}</p>
-              </div>
-              <p>Job Status: <span>{job.jobStatus}</span></p>
-              <div><p>Job Notes:</p>
-              <p>{job.jobNotes}</p>
-              </div>
+      <div>
+        <h1 className="container-title">Job List</h1>
+        <ul className="JobList">
+          {jobs.map((job) => {
+            return (
+              <div key={job.id} className="job">
+                <li>
+                  <h2>{job.title}</h2>
+                  <p>
+                    Customer Name: <span>{job.clientName}</span>
+                  </p>
+                  <p>
+                    Site Address: <span>{job.location}</span>
+                  </p>
+                  <div className="job-description">
+                    <p>Job Description:</p>
+                    <p>{job.description}</p>
+                  </div>
+                  <div>
+                    <p>Client Phone Number:</p>
+                    <p>{job.clientPhoneNumber}</p>
+                  </div>
+                  <p>
+                    Job Status: <span>{job.jobStatus}</span>
+                  </p>
+                  <div>
+                    <p>Job Notes:</p>
+                    <p>{job.jobNotes}</p>
+                  </div>
+                  <div>
+                    <p>Job Date:</p>
+                    <p>{job.jobDate}</p>
+                  </div>
 
-            <Link to={`${job._id}`}>{" "}
-            Check out Job &rarr;
-            </Link>
-          </li>
-            </div>
-          )}
-          )}
-      </ul>
-    </div>
-          </>
+                  <Link to={`${job._id}`}> Check out Job &rarr;</Link>
+                </li>
+              </div>
+            );
+          })}
+        </ul>
+      </div>
+    </>
   );
 };
 
