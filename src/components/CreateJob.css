@@ -1,0 +1,24 @@
+.form {
+  text-align: center;
+}
+
+.form-name{
+  display: block;
+  margin: 0rem;
+  font-size: 2rem;
+}
+
+.form-input {
+  margin: 1rem;
+  max-width: 20rem;
+  padding: 0.5rem;
+}
+
+textarea {
+  resize: none;
+}
+.button {
+  margin: 2rem;
+  padding: 1rem;
+  width: 7rem;
+}

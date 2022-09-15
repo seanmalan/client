@@ -79,45 +79,44 @@ const CreateJob = () => {
 
   return (
     <>
-      <form onSubmit={(args) => handleSubmit(args)}>
+      <form onSubmit={(args) => handleSubmit(args)} className="form">
         {/* Job Titile */}
         <div className="form-group">
-          <label htmlFor="title">Job Title: </label>
-          <input type="text" id="title" name="title" required 
+          <label htmlFor="title" className="form-name">Job Title: </label>
+          <input type="text" className="form-input" name="title" required 
           onChange={(event) => {
             setTitle(event.target.value);
           }}/>
         </div>
         {/* Client Name */}
         <div className="form-group">
-          <label htmlFor="clientName">Client Name: </label>
-          <input type="text" id="clientName" name="clientName" required
+          <label htmlFor="clientName" className="form-name">Client Name: </label>
+          <input type="text" className="form-input" name="clientName" required
           onChange={(event) => {
             setClientName(event.target.value);
           }}/>
         </div>
         {/* Location */}
         <div className="form-group">
-          <label htmlFor="location">Location: </label>
-          <input type="text" id="location" name="location" required
+          <label htmlFor="location" className="form-name">Location: </label>
+          <input type="text" className="form-input" name="location" required
           onChange={(event) => {
             setLocation(event.target.value);
           }}/>
         </div>
         {/* Description */}
         <div className="form-group">
-          <label htmlFor="description">Description: </label>
-          <input type="textarea" id="description" name="description" required
+          <label htmlFor="description" className="form-name">Description: </label>
+          <textarea rows="4" cols="50" className="form-input" name="description" required
           onChange={(event) => {
             setDescription(event.target.value);
           }}/>
         </div>
         {/* client phone number */}
         <div>
-          <label htmlFor="clientPhoneNumber">Clients Phone Number:</label>
+          <label htmlFor="clientPhoneNumber" className="form-name">Clients Phone Number:</label>
           <input
             type="number"
-            id="clientPhoneNumber"
             className="form-input"
             minLength="10"
             value={clientPhoneNumber}
@@ -130,8 +129,8 @@ const CreateJob = () => {
         </div>
         {/* job Status */}
         <div className="form-group">
-          <label htmlFor="jobStatus">Job Status: </label>
-          <select id="jobStatus" name="jobStatus" required
+          <label htmlFor="jobStatus" className="form-name">Job Status: </label>
+          <select className="form-input" name="jobStatus" required
           onChange={(event) => {
             setJobStatus(event.target.value);
           }}>
@@ -145,22 +144,23 @@ const CreateJob = () => {
         </div>
         {/* job Notes */}
         <div className="form-group">
-          <label htmlFor="jobNotes">Job Notes: </label>
-          <input type="textarea" id="jobNotes" name="jobNotes" required
+          <label htmlFor="jobNotes" className="form-name">Job Notes: </label>
+          <textarea rows="4" cols="50" className="form-input" name="jobNotes" required
           onChange={(event) => {
             setJobNotes(event.target.value);
           }}/>
         </div>
-        
+
         {/* Job Date */}
         <div>
-          <label htmlFor="description">Date</label>
+          <label htmlFor="description" className="form-name">Date:</label>
           <DatePicker
+          className="form-input"
             showTimeSelect
             minDate={new Date()}
             selected={jobDate}
             dateFormat="dd/MM/yyyy hh:mm aa"
-            onChange={(date) => setJobDate(date)}
+            onChange={(date) => setJobDate(date)} 
           />
         </div>
 
