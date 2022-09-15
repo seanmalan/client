@@ -1,7 +1,6 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import StrongFencingLogo from "../StrongFencingLogo.jpg";
-
 import LoginButton from "./LoginButton";
 
 const Header = () => {
@@ -19,7 +18,7 @@ const Header = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/active-jobs" className="nav-link">
+            <Link to="/jobs" className="nav-link">
               Active Jobs
             </Link>
           </li>
